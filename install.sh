@@ -1,5 +1,15 @@
 #!/bin/bash
 
+get_latest_github_release_file() {
+    local repo="$1"
+    local file_name="$2"
+
+    latest_tag=$(curl -s "https://api.github.com/repos/${repo}/releases/latest" | grep '"tag_name":' | cut -d '"' -f 4)
+    download_url="https://github.com/${repo}/releases/download/${latest_tag}/${file_name}"
+
+    echo "$download_url"
+}
+
 sudo apt update && sudo apt upgrade -y
 
 sudo apt-get install -y wget curl git thunar
@@ -9,16 +19,20 @@ sudo apt-get install -y libxcb-render-util0-dev libxcb-shape0-dev libxcb-xfixes0
 
 mkdir -p ~/.local/share/fonts/
 
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Iosevka.zip
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/RobotoMono.zip
+echo "[i] Finding latest version of the JetBrainsMono nerd font..."
+nerd_font_url=$(get_latest_github_release_file "ryanoasis/nerd-fonts" "JetBrainsMono.zip")
+echo "Downloading JetBrainsMono nerd font from: $nerd_font_url"
+wget "$nerd_font_url"
 
-unzip Iosevka.zip -d ~/.local/share/fonts/
-unzip RobotoMono.zip -d ~/.local/share/fonts/
+unzip JetBrainsMono.zip -d ~/.local/share/fonts/
 
 fc-cache -fv
 
-wget https://github.com/barnumbirr/alacritty-debian/releases/download/v0.10.0-rc4-1/alacritty_0.10.0-rc4-1_amd64_bullseye.deb
-sudo dpkg -i alacritty_0.10.0-rc4-1_amd64_bullseye.deb
+echo "[i] Finding latest version of alacritty..."
+alacritty_url=$(get_latest_github_release_file "alacritty/alacritty" "alacritty.bash")
+echo "Downloading alacritty from: $alacritty_url"
+wget "$alacritty_url"
+sudo bash ./alacritty.bash
 sudo apt install -f
 
 git clone https://www.github.com/Airblader/i3 i3-gaps
