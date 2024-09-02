@@ -24,9 +24,8 @@ nerd_font_url=$(get_latest_github_release_file "ryanoasis/nerd-fonts" "JetBrains
 echo "Downloading JetBrainsMono nerd font from: $nerd_font_url"
 wget "$nerd_font_url"
 
-unzip JetBrainsMono.zip -d ~/.local/share/fonts/
-
-fc-cache -fv
+sudo unzip JetBrainsMono.zip -d /usr/local/share/fonts/
+sudo fc-cache -fv
 
 echo "[i] Finding latest version of alacritty..."
 alacritty_url=$(get_latest_github_release_file "alacritty/alacritty" "alacritty.bash")
