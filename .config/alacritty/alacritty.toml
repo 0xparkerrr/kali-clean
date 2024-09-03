@@ -1,9 +1,4 @@
-alt_send_esc = true
-dynamic_title = true
-enable_experimental_conpty_backend = false
 live_config_reload = true
-tabspaces = 8
-"window.opacity" = 1.0
 
 [bell]
 animation = "EaseOutExpo"
@@ -43,7 +38,6 @@ unfocused_hollow = true
 
 [font]
 size = 11.0
-use_thin_strokes = true
 
 [font.bold]
 family = "Iosevka Nerd Font"
@@ -566,18 +560,7 @@ hide_when_typing = false
 action = "PasteSelection"
 mouse = "Middle"
 
-[mouse.double_click]
-threshold = 300
-
-[mouse.hints]
-modifiers = "None"
-
-[mouse.triple_click]
-threshold = 300
-
 [scrolling]
-auto_scroll = false
-faux_multiplier = 3
 history = 10000
 multiplier = 3
 
