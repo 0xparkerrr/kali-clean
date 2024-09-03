@@ -34,8 +34,8 @@ wget "$alacritty_url"
 sudo bash ./alacritty.bash
 sudo apt install -f
 
-git clone https://www.github.com/Airblader/i3 i3-gaps
-cd i3-gaps && mkdir -p build && cd build && meson ..
+git clone https://github.com/i3/i3 i3
+cd i3 && mkdir -p build && cd build && meson ..
 ninja
 sudo ninja install
 cd ../..
