@@ -53,10 +53,14 @@ cp .config/compton/compton.conf ~/.config/compton/compton.conf
 cp .config/rofi/config ~/.config/rofi/config
 cp .fehbg ~/.fehbg
 cp .config/i3/clipboard_fix.sh ~/.config/i3/clipboard_fix.sh
-cp -r .wallpaper ~/.wallpaper 
+cp -r .wallpaper ~/.wallpaper
 
-echo "Done! Grab some wallpaper and run pywal -i filename to set your color scheme. To have the wallpaper set on every boot edit ~.fehbg"
-echo "After reboot: Select i3 on login, run lxappearance and select arc-dark"
+echo "[i] Downloading zsh aliases..."
+git clone https://github.com/jazzpizazz/zsh-aliases.git ~/zsh-aliases
+echo "source ~/zsh-aliases/aliases.zsh" >> ~/.zshrc
+
+echo "[+] Done! Grab some wallpaper and run pywal -i filename to set your color scheme. To have the wallpaper set on every boot edit ~.fehbg"
+echo "[i] After reboot: Select i3 on login, run lxappearance and select arc-dark"
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
