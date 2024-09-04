@@ -39,18 +39,18 @@ unfocused_hollow = true
 [font]
 size = 11.0
 
-[font.bold]
-family = "Iosevka Nerd Font"
-
 [font.glyph_offset]
 x = 0
 y = 0
 
+[font.bold]
+family = "JetBrainsMonoNL Nerd Font"
+
 [font.italic]
-family = "Iosevka Nerd Font"
+family = "JetBrainsMonoNL Nerd Font"
 
 [font.normal]
-family = "Iosevka Nerd Font"
+family = "JetBrainsMonoNL Nerd Font"
 style = "Regular"
 
 [font.offset]
