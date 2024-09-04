@@ -52,6 +52,7 @@ cp -r .wallpaper ~/.wallpaper
 echo "[i] Setting up tmux..."
 cp .config/tmux/.tmux.conf ~/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+~/.tmux/plugins/tpm/bin/install_plugins
 
 echo "[i] Downloading zsh aliases..."
 git clone https://github.com/jazzpizazz/zsh-aliases.git ~/zsh-aliases
