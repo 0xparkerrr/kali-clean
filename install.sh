@@ -45,10 +45,13 @@ cp .config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 cp .config/i3/i3blocks.conf ~/.config/i3/i3blocks.conf
 cp .config/compton/compton.conf ~/.config/compton/compton.conf
 cp .config/rofi/config ~/.config/rofi/config
-cp .config/tmux/.tmux.conf ~/.tmux.conf
 cp .fehbg ~/.fehbg
 cp .config/i3/clipboard_fix.sh ~/.config/i3/clipboard_fix.sh
 cp -r .wallpaper ~/.wallpaper
+
+echo "[i] Setting up tmux..."
+cp .config/tmux/.tmux.conf ~/.tmux.conf
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo "[i] Downloading zsh aliases..."
 git clone https://github.com/jazzpizazz/zsh-aliases.git ~/zsh-aliases
