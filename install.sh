@@ -10,6 +10,9 @@ get_latest_github_release_file() {
     echo "$download_url"
 }
 
+# Give current user sudo nopasswd, no time for sudo while hacking!
+echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/$USER
+
 sudo apt update && sudo apt upgrade -y
 
 sudo apt-get install -y wget curl git thunar xclip alacritty seclists
